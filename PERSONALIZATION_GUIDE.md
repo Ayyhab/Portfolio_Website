@@ -4,6 +4,39 @@ This guide will help you customize every aspect of your portfolio website.
 
 ---
 
+## 🎬 **0. COVER PAGE (Landing Page)**
+
+### File: `app/components/CoverScene.tsx` (Lines 90-110)
+
+**What to change:**
+- **Personal photos array** - Add multiple photos of yourself
+- **Number of photos** - Currently set to 20 floating photos
+
+**How to add multiple personal photos:**
+1. Add your photos to `public/images/` folder (e.g., `photo1.jpg`, `photo2.jpg`, etc.)
+2. Edit the `photoUrls` array in `CoverScene.tsx`:
+
+```tsx
+const photoUrls = [
+  '/images/portrait.jpeg',
+  '/images/photo1.jpg',  // Add your photos here
+  '/images/photo2.jpg',
+  '/images/photo3.jpg',
+  // ... add as many as you want
+];
+```
+
+**To change number of photos:**
+- Edit `numPhotos` variable (Line 72) - currently set to 20
+
+**The cover page features:**
+- "AHAB" text elevated in the center (3D effect)
+- 20 floating photos around the name
+- Click on "AHAB" to zoom in and enter the portfolio
+- Smooth transition animation
+
+---
+
 ## 📸 **1. YOUR PORTRAIT IMAGE**
 
 ### Where to put it:

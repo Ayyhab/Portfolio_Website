@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { memo, useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useLenis } from '../hooks/useLenis';
 import * as THREE from 'three';
@@ -12,11 +12,11 @@ interface PortraitPlaneProps {
   alphaMapUrl?: string;
 }
 
-export default function PortraitPlane({
-  portraitUrl = '/Users/ahabmasudsiddiqui/Desktop/Portfolio/public/images/portrait.jpeg',
-  displacementMapUrl = '/Users/ahabmasudsiddiqui/Desktop/Portfolio/public/images/portrait-displacement.jpg',
-  roughnessMapUrl = '/Users/ahabmasudsiddiqui/Desktop/Portfolio/public/images/portrait-roughness.jpg',
-  alphaMapUrl = '/Users/ahabmasudsiddiqui/Desktop/Portfolio/public/images/portrait-alpha.jpg',
+function PortraitPlane({
+  portraitUrl = '/images/portrait.jpeg',
+  displacementMapUrl = '/images/portrait-displacement.jpg',
+  roughnessMapUrl = '/images/portrait-roughness.jpg',
+  alphaMapUrl = '/images/portrait-alpha.jpg',
 }: PortraitPlaneProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const { scrollProgress, scrollVelocity } = useLenis();
@@ -199,3 +199,5 @@ export default function PortraitPlane({
     </mesh>
   );
 }
+
+export default memo(PortraitPlane);

@@ -1,11 +1,16 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { memo, useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useLenis } from '../hooks/useLenis';
 import * as THREE from 'three';
 
-export default function AnimatedLine() {
+interface AnimatedLineProps {
+  activeProjectIndex?: number | null;
+  totalProjects?: number;
+}
+
+function AnimatedLine({ activeProjectIndex = null, totalProjects = 3 }: AnimatedLineProps) {
   const lineRef = useRef<THREE.Line>(null);
   const { scrollProgress } = useLenis();
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -57,18 +62,39 @@ export default function AnimatedLine() {
       lineRef.current.rotation.z = scrollProgress * Math.PI * 0.1; // Very subtle rotation
       lineRef.current.rotation.y = scrollProgress * Math.PI * 0.05;
 
-      // Update curvature with subtle sine wave
+      // Calculate bend near active project
+      let bendAmount = 0;
+      let bendPosition = 0.5; // Center of line
+      
+      if (activeProjectIndex !== null && totalProjects > 0) {
+        // Map project index to line position (0 to 1)
+        bendPosition = (activeProjectIndex + 1) / (totalProjects + 1);
+        // Subtle bend amount
+        bendAmount = 0.3;
+      }
+
+      // Update curvature with subtle sine wave and project bend
       const positions = geometryRef.current.attributes.position;
       if (positions) {
         for (let i = 0; i <= 32; i++) {
           const t = i / 32;
           const x = (t - 0.5) * 12;
-          // Very subtle sine-based curvature
+          
+          // Base sine curvature
           const baseY = Math.sin(t * Math.PI * 2) * 0.15;
+          
+          // Animated sine wave
           const animatedY = baseY + Math.sin(state.clock.elapsedTime * 0.3 + t * 2) * 0.05;
+          
+          // Add bend near active project (Gaussian-like curve)
+          const distanceFromBend = Math.abs(t - bendPosition);
+          const bendInfluence = Math.exp(-(distanceFromBend * distanceFromBend) * 20) * bendAmount;
+          const bendDirection = t < bendPosition ? -1 : 1;
+          const finalY = animatedY + bendInfluence * bendDirection;
+          
           const z = 0;
 
-          positions.setXYZ(i, x, animatedY, z);
+          positions.setXYZ(i, x, finalY, z);
         }
         positions.needsUpdate = true;
       }
@@ -92,3 +118,5 @@ export default function AnimatedLine() {
     </line>
   );
 }
+
+export default memo(AnimatedLine);

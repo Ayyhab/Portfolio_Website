@@ -1,12 +1,15 @@
 'use client';
 
+import { memo, useMemo } from 'react';
 import Canvas from './components/Canvas';
 import SmoothScroll from './components/SmoothScroll';
-import ProjectCard from './components/ProjectCard';
+import AnimatedProjectCard from './components/AnimatedProjectCard';
+import AnimatedHeading from './components/AnimatedHeading';
+import AdventureSection from './components/AdventureSection';
 
-export default function Home() {
-  // Placeholder projects - replace with your actual projects
-  const projects = [
+function Home() {
+  // Memoize projects array to prevent unnecessary re-renders
+  const projects = useMemo(() => [
     {
       title: 'Project 1',
       description: 'A brief description of your first project. Replace this with details about what you built, the challenges you faced, and the technologies you used.',
@@ -28,19 +31,63 @@ export default function Home() {
       projectUrl: '#',
       githubUrl: '#',
     },
-  ];
+  ], []);
+
+  // Adventure photos - add your actual adventure photos here
+  const adventurePhotos = useMemo(() => [
+    {
+      src: '/images/adventure/skydiving.jpg',
+      alt: 'Skydiving',
+      activity: 'Skydiving',
+      location: 'Switzerland',
+    },
+    {
+      src: '/images/adventure/paragliding.jpg',
+      alt: 'Paragliding',
+      activity: 'Paragliding',
+      location: 'Nepal',
+    },
+    {
+      src: '/images/adventure/rock-climbing.jpg',
+      alt: 'Rock Climbing',
+      activity: 'Rock Climbing',
+      location: 'Yosemite',
+    },
+    {
+      src: '/images/adventure/scuba-diving.jpg',
+      alt: 'Scuba Diving',
+      activity: 'Scuba Diving',
+      location: 'Maldives',
+    },
+    {
+      src: '/images/adventure/mountain-biking.jpg',
+      alt: 'Mountain Biking',
+      activity: 'Mountain Biking',
+      location: 'Colorado',
+    },
+    {
+      src: '/images/adventure/surfing.jpg',
+      alt: 'Surfing',
+      activity: 'Surfing',
+      location: 'Hawaii',
+    },
+  ], []);
 
   return (
     <SmoothScroll>
-      <Canvas />
+      <Canvas totalProjects={projects.length} />
       <div className="relative z-10">
         {/* Hero Section */}
         <section className="h-screen w-full flex items-center justify-center px-4">
           <div className="text-center max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6">
-              Welcome to My
-              <span className="block text-red-500">Portfolio</span>
-            </h1>
+            <div className="mb-6">
+              <AnimatedHeading className="text-6xl md:text-8xl font-bold text-white">
+                Welcome to My
+              </AnimatedHeading>
+              <AnimatedHeading className="text-6xl md:text-8xl font-bold text-red-500 block" delay={0.2}>
+                Portfolio
+              </AnimatedHeading>
+            </div>
             <p className="text-xl md:text-2xl text-white/80 mb-8">
               Full Stack Developer & Creative Problem Solver
             </p>
@@ -64,9 +111,9 @@ export default function Home() {
         {/* About Section */}
         <section className="h-screen w-full flex items-center justify-center px-4 bg-black/30 backdrop-blur-sm">
           <div className="max-w-4xl text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            <AnimatedHeading className="text-5xl md:text-6xl font-bold text-white mb-8">
               About Me
-            </h2>
+            </AnimatedHeading>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6">
               I'm a passionate developer who loves building innovative solutions
               and bringing ideas to life through code. With expertise in modern
@@ -88,12 +135,12 @@ export default function Home() {
           className="min-h-screen w-full py-20 px-4 bg-black/40 backdrop-blur-sm"
         >
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold text-white text-center mb-16">
+            <AnimatedHeading className="text-5xl md:text-6xl font-bold text-white text-center mb-16">
               Featured Projects
-            </h2>
+            </AnimatedHeading>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <ProjectCard key={index} {...project} />
+                <AnimatedProjectCard key={index} {...project} index={index} />
               ))}
             </div>
             <div className="mt-12 text-center">
@@ -107,15 +154,18 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Adventure Section */}
+        <AdventureSection photos={adventurePhotos} />
+
         {/* Contact Section */}
         <section
           id="contact"
           className="h-screen w-full flex items-center justify-center px-4 bg-black/30 backdrop-blur-sm"
         >
           <div className="max-w-2xl text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
+            <AnimatedHeading className="text-5xl md:text-6xl font-bold text-white mb-8">
               Get In Touch
-            </h2>
+            </AnimatedHeading>
             <p className="text-lg md:text-xl text-white/80 mb-12">
               I'm always open to discussing new projects, creative ideas, or
               opportunities to be part of your visions.
@@ -150,3 +200,5 @@ export default function Home() {
     </SmoothScroll>
   );
 }
+
+export default memo(Home);

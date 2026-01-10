@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef } from 'react';
+import { memo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useLenis } from '../hooks/useLenis';
 import * as THREE from 'three';
 
-export default function F1Car() {
+function F1Car() {
   const carRef = useRef<THREE.Group>(null);
   const { scrollProgress } = useLenis();
 
@@ -92,3 +92,5 @@ export default function F1Car() {
     </group>
   );
 }
+
+export default memo(F1Car);

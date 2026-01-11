@@ -14,9 +14,9 @@ interface PortraitPlaneProps {
 
 function PortraitPlane({
   portraitUrl = '/images/portrait.jpg',
-  displacementMapUrl = '/images/portrait-displacement.jpg',
-  roughnessMapUrl = '/images/portrait-roughness.jpg',
-  alphaMapUrl = '/images/portrait-alpha.jpg',
+  displacementMapUrl = '/images/portrait.jpg',
+  roughnessMapUrl = '/images/portrait.jpg',
+  alphaMapUrl = '/images/portrait.jpg',
 }: PortraitPlaneProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const { scrollProgress, scrollVelocity } = useLenis();

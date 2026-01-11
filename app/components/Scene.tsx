@@ -5,7 +5,6 @@ import { useLenis } from '../hooks/useLenis';
 import { useActiveProject } from '../hooks/useActiveProject';
 import F1Car from './F1Car';
 import AnimatedLine from './AnimatedLine';
-import PortraitPlane from './PortraitPlane';
 import { Environment } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -37,7 +36,6 @@ function Scene({ totalProjects = 3 }: SceneProps) {
       <pointLight position={[-5, 3, -5]} intensity={0.5} color="#DC143C" />
       <Environment preset="sunset" />
       <AnimatedLine activeProjectIndex={activeProjectIndex} totalProjects={totalProjects} />
-      <PortraitPlane />
       <F1Car />
       <fog attach="fog" args={['#0a0a0a', 10, 30]} />
     </>

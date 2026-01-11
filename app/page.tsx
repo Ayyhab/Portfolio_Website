@@ -114,17 +114,12 @@ function Home() {
               About Me
             </AnimatedHeading>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6">
-              I'm a passionate developer who loves building innovative solutions
-              and bringing ideas to life through code. With expertise in modern
-              web technologies, I create seamless user experiences and robust
-              applications.
-            </p>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-              When I'm not coding, you'll find me following Formula 1 races,
-              especially the Ferrari Scuderia team. The precision, speed, and
-              innovation in F1 racing inspire my approach to software
-              development.
-            </p>
+  I’m a curious builder at heart — currently a year ahead in my studies — who enjoys going off the beaten path to understand how things actually work. I’ve had the opportunity to work closely with professors on research-driven development, contribute to experimental ideas, and represent innovation-focused communities as an MIT Hack the Nation Ambassador. Along the way, I founded a startup to turn ideas into real, deployable systems, not just concepts on paper.
+</p>
+
+<p className="text-lg md:text-xl text-white/80 leading-relaxed">
+  I enjoy learning independently, exploring new technologies on my own, and figuring things out as I go — whether that means shipping a product solo or collaborating with a team to bring something larger to life. Outside of building, you’ll usually find me playing guitar, singing, hiking, chasing adventure, or watching (and occasionally playing) football. I’m driven by curiosity, momentum, and the excitement of creating things that feel alive.
+</p>
           </div>
         </section>
 

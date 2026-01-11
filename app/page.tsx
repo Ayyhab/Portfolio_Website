@@ -36,41 +36,40 @@ function Home() {
   // Adventure photos - add your actual adventure photos here
   const adventurePhotos = useMemo(() => [
     {
-      src: '/images/adventure/skydiving.jpg',
+      src: '/images/adventure/adv.jpeg',
       alt: 'Skydiving',
       activity: 'Skydiving',
-      location: 'Switzerland',
+      location: 'Interlaken, Switzerland',
     },
-    {
-      src: '/images/adventure/paragliding.jpg',
-      alt: 'Paragliding',
-      activity: 'Paragliding',
-      location: 'Nepal',
+     {
+      src: '/images/adventure/bungee.jpg',
+      alt: 'bungee',
+      activity: 'bungee Jumping',
+      location: 'Whistler, Canada',
     },
-    {
-      src: '/images/adventure/rock-climbing.jpg',
-      alt: 'Rock Climbing',
-      activity: 'Rock Climbing',
-      location: 'Yosemite',
+     {
+      src: '/images/adventure/Music.jpeg',
+      alt: 'Music',
+      activity: 'Music',
+      location: 'Vancouver, Canada',
+    }, {
+      src: '/images/adventure/advent.jpeg',
+      alt: 'Skydiving',
+      activity: '',
+      location: '',
     },
-    {
-      src: '/images/adventure/scuba-diving.jpg',
-      alt: 'Scuba Diving',
-      activity: 'Scuba Diving',
-      location: 'Maldives',
-    },
-    {
-      src: '/images/adventure/mountain-biking.jpg',
-      alt: 'Mountain Biking',
-      activity: 'Mountain Biking',
-      location: 'Colorado',
-    },
-    {
-      src: '/images/adventure/surfing.jpg',
-      alt: 'Surfing',
-      activity: 'Surfing',
-      location: 'Hawaii',
-    },
+       {
+      src: '/images/adventure/bungees.jpg',
+      alt: 'bungee',
+      activity: '',
+      location: '',
+    },{
+      src: '/images/adventure/Musics.jpeg',
+      alt: 'Music',
+      activity: '',
+      location: '',
+    }
+    
   ], []);
 
   return (

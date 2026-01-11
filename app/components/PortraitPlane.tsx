@@ -13,7 +13,7 @@ interface PortraitPlaneProps {
 }
 
 function PortraitPlane({
-  portraitUrl = '/images/portrait.jpeg',
+  portraitUrl = '/images/portrait.jpg',
   displacementMapUrl = '/images/portrait-displacement.jpg',
   roughnessMapUrl = '/images/portrait-roughness.jpg',
   alphaMapUrl = '/images/portrait-alpha.jpg',
@@ -142,21 +142,21 @@ function PortraitPlane({
     if (meshRef.current) {
       // Base rotation from scroll progress - slow and elegant
       const baseRotation = scrollProgress * Math.PI * 0.5; // Max 90 degrees total
-      
+
       // Add velocity-based speed increase (normalized and subtle)
       const velocityFactor = Math.min(Math.abs(scrollVelocity) / 2000, 0.3); // Normalize and cap at 30%
       const velocityRotation = velocityFactor * delta * 2; // Subtle speed boost
-      
+
       // Combine rotations for smooth, elegant motion
       meshRef.current.rotation.y = baseRotation + velocityRotation;
-      
+
       // Subtle mouse parallax - elegant and minimal
       const parallaxX = mouse.x * 0.12;
       const parallaxY = mouse.y * 0.12;
-      
+
       // Very subtle floating animation
       const floatOffset = Math.sin(state.clock.elapsedTime * 0.4) * 0.02;
-      
+
       // Set position combining parallax and float
       meshRef.current.position.x = parallaxX;
       meshRef.current.position.y = parallaxY + floatOffset;

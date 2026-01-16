@@ -146,7 +146,6 @@ function Home() {
 </p>
 
 <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-  I enjoy learning independently, exploring new technologies on my own, and figuring things out as I go — whether that means shipping a product solo or collaborating with a team to bring something larger to life. Outside of building, you’ll usually find me playing guitar, singing, hiking, chasing adventure, or watching (and occasionally playing) football. I’m driven by curiosity, momentum, and the excitement of creating things that feel alive.
 </p>
           </div>
         </section>

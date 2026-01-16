@@ -165,12 +165,6 @@ function Home() {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <p className="text-white/60 text-sm mb-4">
-                Add more projects by editing the projects array in{' '}
-                <code className="bg-white/10 px-2 py-1 rounded text-red-400">
-                  app/page.tsx
-                </code>
-              </p>
             </div>
           </div>
         </section>
@@ -193,13 +187,13 @@ function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:ahabmasudsiddiqui@gmail.com"
                 className="px-8 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition-colors"
               >
                 Send Email
               </a>
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/Ayyhab"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold border border-white/20 transition-colors"
@@ -207,7 +201,7 @@ function Home() {
                 GitHub
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/ahab-masud-siddiqui-a128581b2/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold border border-white/20 transition-colors"

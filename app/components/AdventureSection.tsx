@@ -110,14 +110,6 @@ export default function AdventureSection({ photos }: AdventureSectionProps) {
 
         <div className="mt-12 text-center">
           <p className="text-white/60 text-sm">
-            Add your adventure photos to{' '}
-            <code className="bg-white/10 px-2 py-1 rounded text-red-400">
-              public/images/adventure/
-            </code>{' '}
-            and update the filenames in{' '}
-            <code className="bg-white/10 px-2 py-1 rounded text-red-400">
-              app/page.tsx
-            </code>
           </p>
         </div>
       </div>

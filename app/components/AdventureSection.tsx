@@ -66,7 +66,7 @@ export default function AdventureSection({ photos }: AdventureSectionProps) {
           Adventure & Thrills
         </AnimatedHeading>
         <p className="text-center text-white/70 text-lg mb-16 max-w-2xl mx-auto">
-          When I am not coding, I'm chasing adrenaline and exploring the world from new perspectives.
+          When I am not coding, I am chasing adrenaline and exploring the world from new perspectives.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

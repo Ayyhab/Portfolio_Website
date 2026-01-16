@@ -11,9 +11,9 @@ function Home() {
   // Memoize projects array to prevent unnecessary re-renders
   const projects = useMemo(() => [
     {
-      title: 'AI-Powered CRM Automation Platform',
+      title: 'Nerva - AI-Powered CRM Platform',
   description:
-    'Built a privacy-first, AI-powered CRM that automates real-estate workflows by extracting structured customer data from emails and conversations using a Gemini-powered LLM. The system performs real-time intent detection and engagement scoring, updates Firebase automatically, and integrates Google Cloud OAuth—reducing manual CRM updates by 60%.',
+    'Built a privacy-first, AI-powered CRM that uses a Gemini-based LLM to extract structured customer data, perform intent detection, and automate real-time updates to Firebase—reducing manual CRM work by 60%.',
   technologies: [
     'Next.js',
     'TypeScript',
@@ -26,22 +26,39 @@ function Home() {
     'CSS3'
   ],
       projectUrl: 'https://www.youtube.com/watch?v=L6391NB274o',
-      githubUrl: 'https://github.com/Ayyhab/the_builders',
+      githubUrl: 'https://github.com/eteen12/realtor-sass',
     },
     {
-      title: 'Project 2',
-      description: 'A brief description of your second project. Highlight key features and your role in the development process.',
-      technologies: ['Node.js', 'Express', 'MongoDB'],
-      projectUrl: '#',
-      githubUrl: '#',
+      title: 'EduAI - Academic Research Platform',
+      description: 'Built a scalable academic research platform with C#/.NET REST APIs, PostgreSQL (pgvector), and Prisma, using Dockerized services to streamline development and reduce onboarding time by 30%.',
+      technologies: [
+          'C#',
+          '.NET',
+          'PostgreSQL',
+          'pgvector',
+          'Prisma',
+          'Docker',
+          'REST APIs'
+        ],
+      projectUrl: 'https://eduai-website-git-main-ayyhabs-projects.vercel.app/',
+      githubUrl: 'https://eduai-website-git-main-ayyhabs-projects.vercel.app/',
     },
     {
-      title: 'Project 3',
-      description: 'A brief description of your third project. Showcase your skills and the impact of your work.',
-      technologies: ['Python', 'Django', 'PostgreSQL'],
-      projectUrl: '#',
-      githubUrl: '#',
-    },
+  title: 'AI-Powered Investment Platform',
+  description:
+    'Developed and tested production features for an AI-powered investment platform, building React interfaces from Figma designs, integrating REST APIs with Redux state management, and supporting CI/CD workflows in a Linux-based Docker environment.',
+  technologies: [
+    'React',
+    'Redux',
+    'REST APIs',
+    'Docker',
+    'Linux',
+    'CI/CD',
+    'Figma'
+  ],
+  projectUrl: '#',
+  githubUrl: '#',
+  },
   ], []);
 
   // Adventure photos - add your actual adventure photos here

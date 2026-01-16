@@ -189,7 +189,7 @@ function Home() {
               Get In Touch
             </AnimatedHeading>
             <p className="text-lg md:text-xl text-white/80 mb-12">
-              I'm always open to discussing new projects, creative ideas, or
+              I am always open to discussing new projects, creative ideas, or
               opportunities to be part of your visions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

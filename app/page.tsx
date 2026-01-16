@@ -11,11 +11,22 @@ function Home() {
   // Memoize projects array to prevent unnecessary re-renders
   const projects = useMemo(() => [
     {
-      title: 'Project 1',
-      description: 'A brief description of your first project. Replace this with details about what you built, the challenges you faced, and the technologies you used.',
-      technologies: ['React', 'TypeScript', 'Next.js'],
-      projectUrl: '#',
-      githubUrl: '#',
+      title: 'AI-Powered CRM Automation Platform',
+  description:
+    'Built a privacy-first, AI-powered CRM that automates real-estate workflows by extracting structured customer data from emails and conversations using a Gemini-powered LLM. The system performs real-time intent detection and engagement scoring, updates Firebase automatically, and integrates Google Cloud OAuth—reducing manual CRM updates by 60%.',
+  technologies: [
+    'Next.js',
+    'TypeScript',
+    'Gemini LLM',
+    'Firebase',
+    'Google Cloud OAuth',
+    'NLP',
+    'Speech-to-Text',
+    'HTML5',
+    'CSS3'
+  ],
+      projectUrl: 'https://www.youtube.com/watch?v=L6391NB274o',
+      githubUrl: 'https://github.com/Ayyhab/the_builders',
     },
     {
       title: 'Project 2',

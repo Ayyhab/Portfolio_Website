@@ -44,7 +44,7 @@ function Home() {
       githubUrl: 'https://eduai-website-git-main-ayyhabs-projects.vercel.app/',
     },
     {
-  title: 'AI-Powered Investment Platform',
+  title: 'EvoTrade - AI Investment Platform',
   description:
     'Developed and tested production features for an AI-powered investment platform, building React interfaces from Figma designs, integrating REST APIs with Redux state management, and supporting CI/CD workflows in a Linux-based Docker environment.',
   technologies: [
@@ -56,8 +56,8 @@ function Home() {
     'CI/CD',
     'Figma'
   ],
-  projectUrl: '#',
-  githubUrl: '#',
+  projectUrl: 'https://github.com/sbinkader/EvoTrade',
+  githubUrl: 'https://github.com/sbinkader/EvoTrade',
   },
   ], []);
 
